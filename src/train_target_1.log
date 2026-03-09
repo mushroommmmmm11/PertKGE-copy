@@ -1,0 +1,5 @@
+nohup: ignoring input
+  File "/workspace/src/train_pertkge.py", line 123
+    apt-get update
+            ^^^^^^
+SyntaxError: invalid syntax

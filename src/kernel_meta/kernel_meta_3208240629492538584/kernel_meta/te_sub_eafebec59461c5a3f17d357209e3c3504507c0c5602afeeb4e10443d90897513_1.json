@@ -1,0 +1,22 @@
+{
+    "KBHit":false,
+    "binFileName":"te_sub_eafebec59461c5a3f17d357209e3c3504507c0c5602afeeb4e10443d90897513_1",
+    "binFileSuffix":".o",
+    "blockDim":30,
+    "coreType":"AiCore",
+    "deterministic":"ignore",
+    "globalworkspace_spec_workspace":{
+        "size":32,
+        "type":0
+    },
+    "kernelName":"te_sub_eafebec59461c5a3f17d357209e3c3504507c0c5602afeeb4e10443d90897513_1__kernel0",
+    "magic":"RT_DEV_BINARY_MAGIC_ELF",
+    "memoryStamping":[],
+    "opParaSize":0,
+    "parameters":[
+        null,
+        null,
+        null
+    ],
+    "sha256":"3eb5c9294473b39966423c62ef3c7dab1e5fcaa9f8bf37e653cec819cd72c6cc"
+}

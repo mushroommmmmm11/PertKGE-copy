@@ -1,0 +1,20 @@
+{
+    "binFileName":"te_lpnormreducev2_8750cefd9c6254c5c304dcd3d336d77736e19cfd8159c8f22d5b3d8987bbae2b_1",
+    "binFileSuffix":".o",
+    "blockDim":30,
+    "coreType":"AiCore",
+    "deterministic":"ignore",
+    "globalworkspace_spec_workspace":{
+        "size":32,
+        "type":0
+    },
+    "kernelName":"te_lpnormreducev2_8750cefd9c6254c5c304dcd3d336d77736e19cfd8159c8f22d5b3d8987bbae2b_1__kernel0",
+    "magic":"RT_DEV_BINARY_MAGIC_ELF",
+    "memoryStamping":[],
+    "opParaSize":0,
+    "parameters":[
+        null,
+        null
+    ],
+    "sha256":"33fa005b1a3a5aa1e65c7bc729ed4829ca462b68d052fe3614f6c6bb40de359d"
+}

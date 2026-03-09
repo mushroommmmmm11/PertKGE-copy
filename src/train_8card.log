@@ -1,0 +1,69 @@
+nohup: ignoring input
+[2025-12-18 17:22:04,186] torch.distributed.run: [WARNING] 
+[2025-12-18 17:22:04,186] torch.distributed.run: [WARNING] *****************************************
+[2025-12-18 17:22:04,186] torch.distributed.run: [WARNING] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+[2025-12-18 17:22:04,186] torch.distributed.run: [WARNING] *****************************************
+Traceback (most recent call last):
+  File "/workspace/src/train_pertkge.py", line 128, in <module>
+    five_fold_cv(args)
+  File "/workspace/src/train_pertkge.py", line 60, in five_fold_cv
+    device = torch.device(f'npu:{local_rank}')
+  File "/root/miniconda3/envs/D910_PyTorch2.1/lib/python3.10/site-packages/torch_npu/utils/_device.py", line 29, in __new__
+    return origin_device(*args, **kwargs)
+RuntimeError: Invalid device string: 'npu:-1'
+[ERROR] 2025-12-18-17:22:12 (PID:581376, Device:-1, RankID:-1) ERR99999 UNKNOWN application exception
+Traceback (most recent call last):
+  File "/workspace/src/train_pertkge.py", line 128, in <module>
+    five_fold_cv(args)
+  File "/workspace/src/train_pertkge.py", line 60, in five_fold_cv
+    device = torch.device(f'npu:{local_rank}')
+  File "/root/miniconda3/envs/D910_PyTorch2.1/lib/python3.10/site-packages/torch_npu/utils/_device.py", line 29, in __new__
+    return origin_device(*args, **kwargs)
+RuntimeError: Invalid device string: 'npu:-1'
+[ERROR] 2025-12-18-17:22:14 (PID:581375, Device:-1, RankID:-1) ERR99999 UNKNOWN application exception
+Traceback (most recent call last):
+  File "/workspace/src/train_pertkge.py", line 128, in <module>
+    five_fold_cv(args)
+  File "/workspace/src/train_pertkge.py", line 60, in five_fold_cv
+    device = torch.device(f'npu:{local_rank}')
+  File "/root/miniconda3/envs/D910_PyTorch2.1/lib/python3.10/site-packages/torch_npu/utils/_device.py", line 29, in __new__
+    return origin_device(*args, **kwargs)
+RuntimeError: Invalid device string: 'npu:-1'
+[ERROR] 2025-12-18-17:22:14 (PID:581379, Device:-1, RankID:-1) ERR99999 UNKNOWN application exception
+[2025-12-18 17:22:14,250] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 581373 closing signal SIGTERM
+[2025-12-18 17:22:14,253] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 581374 closing signal SIGTERM
+[2025-12-18 17:22:14,253] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 581375 closing signal SIGTERM
+[2025-12-18 17:22:14,253] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 581377 closing signal SIGTERM
+[2025-12-18 17:22:14,254] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 581378 closing signal SIGTERM
+[2025-12-18 17:22:14,254] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 581379 closing signal SIGTERM
+[2025-12-18 17:22:14,254] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 581380 closing signal SIGTERM
+[2025-12-18 17:22:14,542] torch.distributed.elastic.multiprocessing.api: [ERROR] failed (exitcode: 1) local_rank: 3 (pid: 581376) of binary: /root/miniconda3/envs/D910_PyTorch2.1/bin/python
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/D910_PyTorch2.1/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+  File "/root/miniconda3/envs/D910_PyTorch2.1/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 346, in wrapper
+    return f(*args, **kwargs)
+  File "/root/miniconda3/envs/D910_PyTorch2.1/lib/python3.10/site-packages/torch/distributed/run.py", line 806, in main
+    run(args)
+  File "/root/miniconda3/envs/D910_PyTorch2.1/lib/python3.10/site-packages/torch/distributed/run.py", line 797, in run
+    elastic_launch(
+  File "/root/miniconda3/envs/D910_PyTorch2.1/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 134, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/root/miniconda3/envs/D910_PyTorch2.1/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+train_pertkge.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-12-18_17:22:14
+  host      : 637caab3b0c7
+  rank      : 3 (local_rank: 3)
+  exitcode  : 1 (pid: 581376)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

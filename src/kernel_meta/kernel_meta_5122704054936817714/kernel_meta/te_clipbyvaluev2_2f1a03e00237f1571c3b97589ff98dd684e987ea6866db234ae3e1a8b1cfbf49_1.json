@@ -1,0 +1,22 @@
+{
+    "binFileName":"te_clipbyvaluev2_2f1a03e00237f1571c3b97589ff98dd684e987ea6866db234ae3e1a8b1cfbf49_1",
+    "binFileSuffix":".o",
+    "blockDim":1,
+    "coreType":"AiCore",
+    "deterministic":"ignore",
+    "globalworkspace_spec_workspace":{
+        "size":32,
+        "type":0
+    },
+    "kernelName":"te_clipbyvaluev2_2f1a03e00237f1571c3b97589ff98dd684e987ea6866db234ae3e1a8b1cfbf49_1__kernel0",
+    "magic":"RT_DEV_BINARY_MAGIC_ELF",
+    "memoryStamping":[],
+    "opParaSize":0,
+    "parameters":[
+        null,
+        null,
+        null,
+        null
+    ],
+    "sha256":"9d54e80e21caf6e2f8ec87f35408e46a6c0208c0fc8a138cb445926004247336"
+}

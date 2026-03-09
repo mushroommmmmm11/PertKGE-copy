@@ -1,0 +1,22 @@
+{
+    "KBHit":false,
+    "binFileName":"te_realdiv_a91dd08e1825175a2ab46ce9c3c005c2b30e35a046451436f577bf04b8d283c0_1",
+    "binFileSuffix":".o",
+    "blockDim":30,
+    "coreType":"AiCore",
+    "deterministic":"ignore",
+    "globalworkspace_spec_workspace":{
+        "size":32,
+        "type":0
+    },
+    "kernelName":"te_realdiv_a91dd08e1825175a2ab46ce9c3c005c2b30e35a046451436f577bf04b8d283c0_1__kernel0",
+    "magic":"RT_DEV_BINARY_MAGIC_ELF",
+    "memoryStamping":[],
+    "opParaSize":0,
+    "parameters":[
+        null,
+        null,
+        null
+    ],
+    "sha256":"80879c10103db404f36b0826614cb2b2d2f71d14841d19ec35839480e688d76f"
+}

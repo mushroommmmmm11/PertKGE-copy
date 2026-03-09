@@ -1,0 +1,26 @@
+{
+    "binFileName":"te_embeddingdensegrad_1761c2e7ad8d0e489479bb6c2c251ee0d6e1851f3b53a96971ce07079499040b_1",
+    "binFileSuffix":".o",
+    "blockDim":30,
+    "coreType":"AiCore",
+    "deterministic":"false",
+    "globalworkspace_spec_workspace":{
+        "size":32,
+        "type":0
+    },
+    "kernelName":"te_embeddingdensegrad_1761c2e7ad8d0e489479bb6c2c251ee0d6e1851f3b53a96971ce07079499040b_1__kernel0",
+    "magic":"RT_DEV_BINARY_MAGIC_ELF",
+    "memoryStamping":[
+        -1
+    ],
+    "opParaSize":256,
+    "parameters":[
+        null,
+        null,
+        {
+            "dtype":"float32",
+            "init_value":0.0
+        }
+    ],
+    "sha256":"53506d2ac2e00857b26c1d8005136ce964a07d46955600585fbec9b11f9c04ab"
+}

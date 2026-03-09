@@ -1,0 +1,20 @@
+{
+    "binFileName":"te_memset_d428c4c99b002e7b26e65ef197fd42359c3928cae461bd78f1d181247b894c80_1",
+    "binFileSuffix":".o",
+    "blockDim":1,
+    "coreType":"AiCore",
+    "deterministic":"ignore",
+    "globalworkspace_spec_workspace":{
+        "size":32,
+        "type":0
+    },
+    "kernelName":"te_memset_d428c4c99b002e7b26e65ef197fd42359c3928cae461bd78f1d181247b894c80_1__kernel0",
+    "magic":"RT_DEV_BINARY_MAGIC_ELF",
+    "memoryStamping":[],
+    "opParaSize":0,
+    "parameters":[
+        null,
+        null
+    ],
+    "sha256":"2f80f440ab61f1fd628cecaa5519bd88ebd70ed01926a9f444a3cb7ef47dcd5d"
+}

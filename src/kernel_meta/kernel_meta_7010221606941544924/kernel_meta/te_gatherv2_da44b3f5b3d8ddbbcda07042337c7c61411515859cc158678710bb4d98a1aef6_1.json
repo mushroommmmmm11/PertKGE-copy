@@ -1,0 +1,22 @@
+{
+    "binFileName":"te_gatherv2_da44b3f5b3d8ddbbcda07042337c7c61411515859cc158678710bb4d98a1aef6_1",
+    "binFileSuffix":".o",
+    "blockDim":30,
+    "coreType":"AiCore",
+    "deterministic":"ignore",
+    "globalworkspace_spec_workspace":{
+        "size":32,
+        "type":0
+    },
+    "kernelName":"te_gatherv2_da44b3f5b3d8ddbbcda07042337c7c61411515859cc158678710bb4d98a1aef6_1__kernel0",
+    "magic":"RT_DEV_BINARY_MAGIC_ELF",
+    "memoryStamping":[],
+    "opParaSize":0,
+    "parameters":[
+        null,
+        null,
+        null,
+        null
+    ],
+    "sha256":"93e8997f6fd20ac6f4b02ef55dbd2453d0b36664d9b00fd8ecee979f58cdff8b"
+}
