@@ -1,0 +1,6 @@
+/best_model/**
+!/best_model/README.md
+/outlog/**
+!/outlog/README.md
+__pycache__/
+kernel_meta
