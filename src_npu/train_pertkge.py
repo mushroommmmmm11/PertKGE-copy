@@ -12,7 +12,6 @@ import argparse
 import torch
 import torch.nn as nn
 # from torch import cuda
-import torch_npu
 from torch.optim import Adam
 from torch.utils.data import Dataset
 from torch.utils.tensorboard import SummaryWriter
@@ -89,17 +88,23 @@ def five_fold_cv(args):
         # choose method
         model = DistMultModel(args.h_dim, len(ent2id), len(rel2id))
         criterion = MarginLoss(args.margin)
-        # if cuda.is_available():
-        #     cuda.empty_cache()
-        #     model.cuda()
-        #     criterion.cuda()
-        torch.npu.empty_cache()
-        model = model.to(device)
-        criterion = criterion.to(device)
+        if device.type == 'cuda':
+            cuda.empty_cache()
+            model.cuda()
+            criterion.cuda()
+        elif device.type == "npu":
+            torch.npu.empty_cache()
+            model = model.to(device)
+            criterion = criterion.to(device)
         
         optimizer = Adam(model.parameters(), lr=args.lr, weight_decay=args.wd)
         kgsampler = BernoulliNegativeSampler(kg,n_neg=args.n_neg)
-        kgloader = DataLoader(kg, batch_size=args.batch_size, use_cuda=False)
+        if device.type in ['cuda', 'npu']:
+            kgsampler.bern_probs = kgsampler.bern_probs.to(device)
+        if device.type == 'cuda':
+            kgloader = DataLoader(kg, batch_size=args.batch_size, use_cuda=True)
+        else:
+            kgloader = DataLoader(kg, batch_size=args.batch_size, use_cuda=False)
 
         # wo train
         _ = tester('DistMult',model,
@@ -216,7 +221,16 @@ if __name__ == '__main__':
     print(args_dict)
     print('_'*50)
 
-    device = torch.device('npu')
+    if args.use_cuda == 'batch':
+        device = torch.device('cuda')
+        from torch import cuda
+    elif args.use_cuda == 'npu':
+        import torch_npu
+        device = torch.device('npu')
+    else:
+        device = torch.device('cpu')
+    import utils
+    utils.device = device
     print(f"-- model will run on {device}")
     
     set_seeds(args.seed)

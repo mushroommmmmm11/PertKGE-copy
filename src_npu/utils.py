@@ -11,6 +11,7 @@ import torch
 from torch.nn.functional import normalize
 from torch import nn, cat
 
+global device
 
 # general function
 def sigmoid(x):
@@ -29,8 +30,12 @@ def set_seeds(seed):
     os.environ['PYTHONHASHSEED'] = str(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
-    torch.npu.manual_seed(seed)
-    torch.npu.manual_seed_all(seed)
+    if device.type == 'cuda':
+        torch.cuda.manual_seed(seed)
+        torch.cuda.manual_seed_all(seed)
+    elif device.type == 'npu':
+        torch.npu.manual_seed(seed)
+        torch.npu.manual_seed_all(seed)
     # some cudnn methods can be random even after fixing the seed
     # unless you tell it to be deterministic
     torch.backends.cudnn.deterministic = True
@@ -359,9 +364,9 @@ def unbiased_evaluator(model_name,model,
 
             h_ranks = []
             for i in tqdm.tqdm(range(len(df))):
-                c = torch.LongTensor([ent2id[df.iloc[i]['from']]]).to('npu')
-                r = torch.LongTensor([rel2id[df.iloc[i]['rel']]]).to('npu')
-                p = torch.LongTensor([ent2id[df.iloc[i]['to']]]).to('npu')
+                c = torch.LongTensor([ent2id[df.iloc[i]['from']]]).to(device)
+                r = torch.LongTensor([rel2id[df.iloc[i]['rel']]]).to(device)
+                p = torch.LongTensor([ent2id[df.iloc[i]['to']]]).to(device)
 
                 score = model.scoring_function(c,p,r)
 
@@ -371,7 +376,7 @@ def unbiased_evaluator(model_name,model,
 
                 n_decoys = len(h_cand)
 
-                h_score = model.scoring_function(torch.LongTensor(h_cand).to('npu'),p.repeat(n_decoys),r.repeat(n_decoys))
+                h_score = model.scoring_function(torch.LongTensor(h_cand).to(device),p.repeat(n_decoys),r.repeat(n_decoys))
 
                 rank = int(sum(h_score >= score).cpu()) + 1
                 h_ranks.append(rank)
@@ -762,9 +767,9 @@ def tester(model_name,model,
             if task == 'target_inference':
                 for i in tqdm.tqdm(range(len(df))):
                     try:
-                        c = torch.LongTensor([ent2id[df.iloc[i]['from']]]).to('npu')
-                        r = torch.LongTensor([rel2id[df.iloc[i]['rel']]]).to('npu')
-                        p = torch.LongTensor([ent2id[df.iloc[i]['to']]]).to('npu')
+                        c = torch.LongTensor([ent2id[df.iloc[i]['from']]]).to(device)
+                        r = torch.LongTensor([rel2id[df.iloc[i]['rel']]]).to(device)
+                        p = torch.LongTensor([ent2id[df.iloc[i]['to']]]).to(device)
                     except KeyError:
                         ranks.append(len(t_cand))
                         continue
@@ -775,7 +780,7 @@ def tester(model_name,model,
                     # replace head
                     n_decoys = len(t_cand)
                     
-                    t_score = model.scoring_function(c.repeat(n_decoys),torch.LongTensor(t_cand).to('npu'),r.repeat(n_decoys))
+                    t_score = model.scoring_function(c.repeat(n_decoys),torch.LongTensor(t_cand).to(device),r.repeat(n_decoys))
                     # print(t_score.shape)
 
                     r = int(sum(t_score >= score).cpu())

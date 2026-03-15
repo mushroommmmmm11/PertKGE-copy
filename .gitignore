@@ -1,6 +1,12 @@
 /best_model/**
 !/best_model/README.md
+/local/**
+!/local/README.md
+/processed_data/**
+!/processed_data/README.md
 /outlog/**
 !/outlog/README.md
+/.cline*
+
 __pycache__/
-kernel_meta
+kernel_meta/
