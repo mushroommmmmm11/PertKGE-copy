@@ -58,7 +58,7 @@ def parse_args(args=None):
 
 def five_fold_cv(args):
     # read cause, process, effect, test file
-    cause, pertkg_wo_cause, test, ent2id, rel2id, pro2nc, h_cand, t_cand = read_files(args)
+    cause, pertkg_wo_cause, test, ent2id, rel2id, pro2nc, h_cand, t_cand, confidence_mapping = read_files(args)
     
     # generate train\valid
     five_fold_train, five_fold_valid = generate_five_fold_files(args, cause)
@@ -87,7 +87,15 @@ def five_fold_cv(args):
         print('split_{} traing now!!!'.format(i))
         # choose method
         model = DistMultModel(args.h_dim, len(ent2id), len(rel2id))
-        criterion = MarginLoss(args.margin)
+        
+        # 根据是否有置信度数据选择损失函数
+        if confidence_mapping is not None:
+            print("使用置信度加权损失函数")
+            criterion = WeightedMarginLoss(args.margin)
+        else:
+            print("使用标准合页损失函数")
+            criterion = MarginLoss(args.margin)
+            
         if device.type == 'cuda':
             cuda.empty_cache()
             model.cuda()
@@ -130,7 +138,16 @@ def five_fold_cv(args):
 
                 # forward + backward + optimize
                 pos, neg = model(h, t, r, n_h, n_t)
-                loss = criterion(pos, neg)
+                
+                # 如果有置信度数据，只对正样本加权
+                if confidence_mapping is not None:
+                    # 获取当前批次的置信度权重（只针对正样本）
+                    confidence_weights = get_confidence_weights_for_batch(h, t, r, confidence_mapping, default_confidence=0.5)
+                    # 只对正样本应用置信度权重，负样本使用标准损失
+                    loss = criterion(pos, neg, confidence_weights)
+                else:
+                    loss = criterion(pos, neg)
+                
                 loss.backward()
                 optimizer.step()
 

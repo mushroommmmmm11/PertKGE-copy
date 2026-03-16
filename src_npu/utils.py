@@ -87,22 +87,53 @@ def read_files(args):
 
     # read files
     cause = pd.read_csv(args.cause_file,sep='\t',names=['from','rel','to']).drop_duplicates()
-    process = pd.read_csv(args.process_file,sep='\t',names=['from','rel','to']).drop_duplicates()
     effect = pd.read_csv(args.effect_file,sep='\t',names=['from','rel','to']).drop_duplicates()
     test = pd.read_csv(args.test_file,sep='\t',names=['from','rel','to']).drop_duplicates()
+
+    # 检查process文件是否包含置信度列
+    process_df = pd.read_csv(args.process_file, sep='\t', header=None)
+    has_confidence = process_df.shape[1] == 4
+    
+    if has_confidence:
+        # 如果process文件包含置信度，使用4列格式
+        process = pd.read_csv(args.process_file, sep='\t', names=['from','rel','to','confidence']).drop_duplicates()
+        print(f"检测到置信度数据，process文件包含{len(process)}个带置信度的三元组")
+    else:
+        # 否则使用3列格式
+        process = pd.read_csv(args.process_file, sep='\t', names=['from','rel','to']).drop_duplicates()
+        print(f"未检测到置信度数据，process文件包含{len(process)}个三元组")
 
     # generate processed data
     if args.load_processed_data:    
         ent2id = np.load(args.processed_data_file + 'ent2id.npy', allow_pickle=True).item()
         rel2id = np.load(args.processed_data_file + 'rel2id.npy', allow_pickle=True).item()
         pro2nc = np.load(args.processed_data_file + 'pro2nc.npy', allow_pickle=True).item()
-
+        if has_confidence:
+            confidence_mapping = np.load(args.processed_data_file + 'confidence_mapping.npy', allow_pickle=True).item()
+        else:
+            confidence_mapping = None
     else:
         # 1.ent2id, rel2id
-        pertkg = pd.concat([cause, process, effect])
-        ent2id,rel2id = get_dictionaries(pertkg)
-        np.save(args.processed_data_file + 'ent2id.npy',ent2id)
-        np.save(args.processed_data_file + 'rel2id.npy',rel2id)
+        if has_confidence:
+            # 对于带置信度的数据，使用专门的字典生成函数
+            pertkg = pd.concat([cause, process[['from','rel','to']], effect])
+            ent2id, rel2id = get_dictionaries(pertkg)
+            # 创建置信度映射
+            confidence_mapping = {}
+            for _, row in process.iterrows():
+                # 将基于名称的映射转换为基于索引的映射，提高训练时查找效率
+                triple_key = (ent2id.get(row['from']), rel2id.get(row['rel']), ent2id.get(row['to']))
+                confidence_mapping[triple_key] = row['confidence']
+        else:
+            pertkg = pd.concat([cause, process, effect])
+            ent2id, rel2id = get_dictionaries(pertkg)
+            confidence_mapping = None
+            
+        np.save(args.processed_data_file + 'ent2id.npy', ent2id)
+        np.save(args.processed_data_file + 'rel2id.npy', rel2id)
+        if confidence_mapping is not None:
+            np.save(args.processed_data_file + 'confidence_mapping.npy', confidence_mapping)
+        
         # 2.pro2nc
         comp_cand = {k for k,v in ent2id.items() if k.startswith('CID:')}
         _,p2c_dict = get_cpi(cause)
@@ -112,7 +143,7 @@ def read_files(args):
             pro2nc[x] = random.sample(comp_cand - p2c_dict[x],k=3000)  # 3000 is trade of accuracy and evaluate speed
         np.save(args.processed_data_file + 'pro2nc.npy',pro2nc)
 
-    pertkg_wo_cause = pd.concat([process,effect])
+    pertkg_wo_cause = pd.concat([process[['from','rel','to']], effect])
 
     h_cand = [v for k,v in ent2id.items() if k.startswith('CID:')]
     t_cand = [v for k,v in ent2id.items() if k.startswith(('Protein:','TF:','RBP:'))]
@@ -122,7 +153,101 @@ def read_files(args):
     print(f"reading time: {round(e - s, 2)}s")
     print('_'*50)
 
-    return cause, pertkg_wo_cause, test, ent2id, rel2id, pro2nc, h_cand, t_cand 
+    return cause, pertkg_wo_cause, test, ent2id, rel2id, pro2nc, h_cand, t_cand, confidence_mapping
+
+
+def get_confidence_weights_for_batch(heads, tails, relations, confidence_mapping, default_confidence=0.5):
+    """
+    为批次中的每个三元组获取置信度权重
+    
+    Args:
+        heads (torch.Tensor): 头实体索引，shape: (batch_size)
+        tails (torch.Tensor): 尾实体索引，shape: (batch_size)
+        relations (torch.Tensor): 关系索引，shape: (batch_size)
+        confidence_mapping (dict): 置信度映射字典，key为(head_idx, rel_idx, tail_idx)
+        default_confidence (float): 默认置信度
+        
+    Returns:
+        torch.Tensor: 置信度权重，shape: (batch_size)
+    """
+    batch_size = heads.size(0)
+    device = heads.device
+    
+    if confidence_mapping is None:
+        return torch.full((batch_size,), default_confidence, dtype=torch.float32, device=device)
+    
+    # 将索引转为CPU进行查表操作
+    heads_cpu = heads.cpu().numpy()
+    tails_cpu = tails.cpu().numpy()
+    relations_cpu = relations.cpu().numpy()
+    
+    # 构建权重列表
+    weights = []
+    for i in range(batch_size):
+        h_idx = int(heads_cpu[i])
+        t_idx = int(tails_cpu[i])
+        r_idx = int(relations_cpu[i])
+        
+        triple_key = (h_idx, r_idx, t_idx)
+        confidence = confidence_mapping.get(triple_key, default_confidence)
+        weights.append(confidence)
+    
+    return torch.tensor(weights, dtype=torch.float32, device=device)
+
+
+class WeightedMarginLoss(nn.Module):
+    """
+    带置信度权重的合页损失函数
+    
+    损失计算公式：Loss_total = sum(s_i * max(0, margin - pos_score_i + neg_score_i))
+    其中s_i是第i个三元组的置信度权重
+    """
+    
+    def __init__(self, margin=1.0):
+        """
+        初始化加权合页损失
+        
+        Args:
+            margin (float): 合页损失的边界值
+        """
+        super(WeightedMarginLoss, self).__init__()
+        self.margin = margin
+    
+    def forward(self, pos_scores, neg_scores, confidence_weights=None):
+        """
+        计算加权合页损失
+        
+        Args:
+            pos_scores (torch.Tensor): 正样本得分
+                - 如果没有负样本: shape (batch_size,)
+                - 如果有n_neg个负样本: shape (batch_size * n_neg,)，已repeat
+            neg_scores (torch.Tensor): 负样本得分，shape: (batch_size * n_neg)
+            confidence_weights (torch.Tensor, optional): 置信度权重，shape: (batch_size)
+            
+        Returns:
+            torch.Tensor: 加权损失值
+        """
+        # 计算基础合页损失
+        loss = torch.clamp(self.margin - pos_scores + neg_scores, min=0)
+        
+        # 如果提供了置信度权重，则只对正样本应用权重
+        if confidence_weights is not None:
+            # 确保权重在合理范围内
+            confidence_weights = torch.clamp(confidence_weights, min=0.0, max=1.0)
+            
+            # pos_scores可能已经是(batch_size * n_neg)形状（被repeat过）
+            # 也可能是(batch_size,)形状
+            # neg_scores总是(batch_size * n_neg)
+            n_repeat = neg_scores.size(0) // confidence_weights.size(0)
+            expanded_weights = confidence_weights.repeat_interleave(n_repeat)
+            
+            weighted_loss = loss * expanded_weights
+        else:
+            # 如果没有置信度权重，使用默认权重1.0
+            weighted_loss = loss
+        
+        return weighted_loss.mean()
+
 
 def generate_five_fold_files(args, cause):
     print('generate five fold files for training and evaluating!!!')
