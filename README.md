@@ -1,37 +1,38 @@
-# Identifying compound-protein interactions with knowledge graph embedding of perturbation transcriptomics
-This repo contains a PyTorch implementation for PertKGE, which is model proposed in our paper **"Identifying compound-protein interactions with knowledge graph embedding of perturbation transcriptomics"**.
+## For target inference
 
-## Brief Introduction
-PertKGE is a method designed to improve compound-protein interaction with knowledge graph embedding of perturbation transcriptomics.The key is to construct a biologically meaningful knowledge graph that breaks down genes into DNAs, messenger RNAs (mRNAs), long non-coding RNAs (lncRNAs), microRNAs (miRNAs), transcription factors (TFs), RNA-binding proteins (RBPs) and other protein-coding genes. This enables PertKGE to consider various fine-grained interactions between genes to simulate post-transcriptional and post-translational regulatory events in biological system, which intuitively aligns more closely with real world cellular responses to chemical perturbations.\
-![](./fig/Figure1.jpg)
+If there exist new interested compound with perturbation transcriptomics to conduct target inference, plz follow this step.
 
-## Requirements
-To run our code, following main dependency packages are needed:
+### Step1:Processing your own transcriptomics data
+
+This step depends entirely on the format of your data. You can process it using your own differential expression gene (DEGs) analysis code. Generally, two strategies are recommended:
+
+1. Use the "top strategy" to identify DEGs, as described in our paper.
+2. Alternatively, use a standard DEG pipeline, such as Limma, etc.
+
+In either case, the final data format should be as following triples:
+
 ```
-python         3.7
-torch          1.13.1
-torchkge       0.17.5
-numpy          1.21.5
-pandas         1.1.5
-tqdm           4.64.1
-cmapPy         4.0.1
+<Interested_compound_name  Downregulates  mRNA:ATP1B1>
+# Note: aligning gene name using our map_file
 ```
 
-## Demo
-We provided demo to reproduce **Target inference scenario I** in our paper.
+### Step2:Preparing training file
 
-## Running PertKGE
-### Data & Code Prepare
-To run PertKGE, plz clone the repo, download the extra data from [Google Drive](https://drive.google.com/file/d/1jFo0dDAnUOzMoKHFqPRM4pd_loTFwmMa/view?usp=sharing) and extract the files in the current directory.
+We need to prepare four files:**"cause.txt", "process.txt", "effect.txt", and "test.txt"**.
 
-### Training Stage
-Using following cmd to train the PertKGE by replacing **file_path**:
+The simplest approach I recommend is to directly use the files from the directory "../processed_data/target_inference_2/". The only part that needs modification is **adding the triplets identified in the first step to the "effect.txt" file**. 
+
+Then, place "cause/effect/test"  into a new folder, such as "../processed_data/<name>/", where <name> can be any name you choose to name the task.
+
+## Step3:Training stage
+
+Using following cmd to train the PertKGE by replacing  **<name>**:
+
 ```
-$ cd src/
-$ python train_pertkge.py --cause_file "../processed_data/target_inference_1/cause.txt"\
+$ python train_pertkge.py --cause_file "../processed_data/<name>/cause.txt"\
                           --process_file "../processed_data/knowledge_graph/process.txt"\
-                          --effect_file "../processed_data/target_inference_1/effect.txt"\
-                          --test_file "../processed_data/target_inference_1/test.txt"\
+                          --effect_file "../processed_data/<name>/effect.txt"\
+                          --test_file "../processed_data/<name>/test.txt"\
                           --h_dim 300\
                           --margin 1.0\
                           --lr 1e-4\
@@ -39,53 +40,40 @@ $ python train_pertkge.py --cause_file "../processed_data/target_inference_1/cau
                           --n_neg 100\
                           --mode 'reproduce'\
                           --batch_size 2048\
-                          --warm_up 10\
                           --patients 5\
                           --warm_up 10\
-                          --load_processed_data\
-                          --processed_data_file "../processed_data/target_inference_1/"\
-                          --save_model_path "../best_model/target_inference_1/"\
+                          --processed_data_file "../processed_data/<name>/"\
+                          --save_model_path "../best_model/<name>/"\
                           --task "target_inference"\
-                          --run_name "target_inference_1"
+                          --run_name "new_target_inference"
 ```
 
-  
-It is necessary to note that we use **unbiased evaluator** to monitor training process and perform early stopping.By using unbiased evaluator, We find that PertKGE first fits the dataset bias and starts learning the causal mapping at 10 epochs, which may explain why we set warm-up to 10.\
-![](./fig/training_curve.png)
+### Step4:Inference stage
 
-### Inference Stage
-During the inference stage, users can query PertKGE with a compound or target of interest, depending on their objective, such as target inference or ligand VS.
+Please follow the steps sequentially as outlined in the `target_inference.ipynb`. Adjust the paths in the user-defined cells accordingly. 
 
-Users can follow the cmd in **target_inference.ipynb** or **virtual_screening.ipynb**.
-
-## Baseline
-In this work, we compare to following baseline in different settings
 ```
-# Target Inference
-CMap, De, DeMAND, ProTINA, FL-DTD, SSGCN
+'''
+This section is user defined !!!
+'''
+h_dim = 300
 
-# Virtual Screening
-SSGCN, Glide-SP
+data_path = "../processed_data/<name>/"
+save_model_path = '../best_model/<name>/'
+output_path = "../results/<name>/"
 
-# Unbiased test
-HetioNet, BioKG, PrimeKG
+ent_list = ['Interested_compound_name']  # The `ent_list` refers to the list of compounds you wish to infer, which should correspond to the compound names you processed in the step 1.
 ```
-[**CMap**](https://clue.io/) and [**FL-DTD**](http://menglab.pub/fldtd/) were tested in their website. **DeMAND package** was installed through [Bioconductor](https://www.bioconductor.org/packages/release/bioc/html/DeMAND.html). To test **ProTINA**, plz refer to [this repo](https://github.com/CABSEL/ProTINA/tree/master). 
-We recommend to test **SSGCN** using [pytorch version](https://github.com/myzhengSIMM/SSGCN).  
-  
-**Glide-SP** was performed using Maestro of Schrödinger Suites (version 2020-4), and obtained poses were analyzed with PyMOL. [**Grid files**](https://drive.google.com/drive/folders/1wPcn7EaQldWbXONrRVd-ZOcBsNo6IXHw?usp=drive_link) are provided.  
 
-To get other biomedical knowledge graphs for comparation, plz refer to [HetioNet](https://github.com/hetio/hetionet/tree/main), [BioKG](https://github.com/dsi-bdi/biokg), [PrimeKG](https://github.com/mims-harvard/PrimeKG).
+### Another notation
+
+In target inference, we provide two metrics: "ti_score" and "confidence".
+
+- **"ti_score"** is the score directly predicted by the model.
+- **"confidence"** represents how many other compounds were ranked lower than this compound for the target. This metric can help filter out potential false positives caused by representational bias.
 
 
-## Notes
-```
-3/19      Upload data and model weight for "Secondary pharmacology study of K-756 by PertKGE"
-3/20      Upload data and model weight for "PertKGE identified five new scaffold hits for ALDH1B1"
-4/24      Upload src code and data.
-```
-## Cite
-Shengkun Ni, Xiangtai Kong, Yingying Zhang, et al. Identifying compound-protein interactions with knowledge graph embedding of perturbation transcriptomics. Cell Genom. (2024).
 
-## Contact
-nsk25@mails.tsinghua.edu.cn
+## ligand virtual screening
+
+The simplest approach is to directly use the model weights we provided for virtual screening.
