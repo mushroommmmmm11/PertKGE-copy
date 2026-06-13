@@ -1,0 +1,48 @@
+subtype：Centrotemporal epilepsy                                   is_subtype_of   epilepsy
+subtype：Cerebellar hypoplasia/atrophy, epilepsy, and global developmental delay   is_subtype_of   epilepsy
+subtype：Ceroid lipofuscinosis, neuronal, 8, Northern epilepsy variant   is_subtype_of   epilepsy
+subtype：Congenital hypotonia, epilepsy, developmental delay, and digital anomalies   is_subtype_of   epilepsy
+subtype：Cortical dysplasia-focal epilepsy syndrome                is_subtype_of   epilepsy
+subtype：Developmental and epileptic encephalopathy                is_subtype_of   epilepsy
+subtype：Dravet syndrome                                           is_subtype_of   epilepsy
+subtype：Epilepsy idiopathic generalized, susceptibility to, 8}    is_subtype_of   epilepsy
+subtype：Epilepsy nocturnal frontal lobe                           is_subtype_of   epilepsy
+subtype：Epilepsy, X-linked, with variable learning disabilities and behavior disorders   is_subtype_of   epilepsy
+subtype：Epilepsy, childhood absence                               is_subtype_of   epilepsy
+subtype：Epilepsy, early-onset, vitamin B6-dependent               is_subtype_of   epilepsy
+subtype：Epilepsy, early-onset, with or without developmental delay   is_subtype_of   epilepsy
+subtype：Epilepsy, familial adult myoclonic                        is_subtype_of   epilepsy
+subtype：Epilepsy, familial focal, with variable foci              is_subtype_of   epilepsy
+subtype：Epilepsy, familial temporal lobe                          is_subtype_of   epilepsy
+subtype：Epilepsy, hearing loss, and mental retardation syndrome   is_subtype_of   epilepsy
+subtype：Epilepsy, hot water                                       is_subtype_of   epilepsy
+subtype：Epilepsy, idiopathic generalized                          is_subtype_of   epilepsy
+subtype：Epilepsy, juvenile absence, susceptibility to, 2}         is_subtype_of   epilepsy
+subtype：Epilepsy, juvenile myoclonic, susceptibility to           is_subtype_of   epilepsy
+subtype：Epilepsy, myoclonic, familial adult                       is_subtype_of   epilepsy
+subtype：Epilepsy, nocturnal frontal lobe                          is_subtype_of   epilepsy
+subtype：Epilepsy, progressive myoclonic                           is_subtype_of   epilepsy
+subtype：Facial dysmorphism, hypertrichosis, epilepsy, intellectual/developmental delay, and gingival overgrowth syndrome   is_subtype_of   epilepsy
+subtype：Generalized epilepsy with febrile seizures plus, type     is_subtype_of   epilepsy
+subtype：Hypotonia, hypoventilation, impaired intellectual development, dysautonomia, epilepsy, and eye abnormalities   is_subtype_of   epilepsy
+subtype：Intellectual developmental disorder with or without epilepsy or cerebellar ataxia   is_subtype_of   epilepsy
+subtype：Mental retardation, stereotypic movements, epilepsy, and/or cerebral malformations   is_subtype_of   epilepsy
+subtype：Microcephaly, epilepsy, and diabetes syndrome             is_subtype_of   epilepsy
+subtype：Myoclonic epilepsy, infantile, familial                   is_subtype_of   epilepsy
+subtype：Myoclonic epilepsy, juvenile                              is_subtype_of   epilepsy
+subtype：Myoclonic-atonic epilepsy                                 is_subtype_of   epilepsy
+subtype：Myopathy, epilepsy, and progressive cerebral atrophy      is_subtype_of   epilepsy
+subtype：Neurodevelopmental disorder with epilepsy and hypoplasia of the corpus callosum   is_subtype_of   epilepsy
+subtype：Neurodevelopmental disorder with epilepsy, cataracts, feeding difficulties, and delayed brain myelination   is_subtype_of   epilepsy
+subtype：Neurodevelopmental disorder with epilepsy, spasticity, and brain atrophy   is_subtype_of   epilepsy
+subtype：Neurodevelopmental disorder with infantile epileptic spasms   is_subtype_of   epilepsy
+subtype：Neurodevelopmental disorder with microcephaly, epilepsy, and brain atrophy   is_subtype_of   epilepsy
+subtype：Neurodevelopmental disorder with microcephaly, epilepsy, and hypomyelination   is_subtype_of   epilepsy
+subtype：Neurodevelopmental disorder with microcephaly, impaired language, epilepsy, and gait abnormalities, autosomal dominant   is_subtype_of   epilepsy
+subtype：Neurodevelopmental disorder with or without early-onset generalized epilepsy   is_subtype_of   epilepsy
+subtype：Neurodevelopmental disorder with seizures and nonepileptic hyperkinetic movements   is_subtype_of   epilepsy
+subtype：Paroxysmal nonkinesigenic dyskinesia, 3, with or without generalized epilepsy   is_subtype_of   epilepsy
+subtype：Polyhydramnios, megalencephaly, and symptomatic epilepsy   is_subtype_of   epilepsy
+subtype：Psychomotor retardation, epilepsy, and craniofacial dysmorphism   is_subtype_of   epilepsy
+subtype：Rolandic epilepsy, impaired intellectual development, and speech dyspraxia   is_subtype_of   epilepsy
+subtype：Spinal muscular atrophy with progressive myoclonic epilepsy   is_subtype_of   epilepsy

@@ -1,0 +1,193 @@
+subtype：Centrotemporal epilepsy subdisease_regulates DNA:BRWD3 classification:Limited
+subtype：Centrotemporal epilepsy subdisease_regulates DNA:GABRG2 classification:Supportive
+subtype：Centrotemporal epilepsy subdisease_regulates DNA:GRIN2A classification:Supportive
+subtype：Cerebellar hypoplasia/atrophy, epilepsy, and global developmental delay subdisease_regulates DNA:OXR1 classification:Strong
+subtype：Ceroid lipofuscinosis, neuronal, 8, Northern epilepsy variant subdisease_regulates DNA:CLN8 classification:Strong
+subtype：Congenital hypotonia, epilepsy, developmental delay, and digital anomalies subdisease_regulates DNA:ATN1 classification:Strong
+subtype：Cortical dysplasia-focal epilepsy syndrome subdisease_regulates DNA:CNTNAP2 classification:Definitive
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:AARS classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:AARS1 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:ACTL6B classification:Definitive
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:ADAM22 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:ALG13 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:AP3B2 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:ARHGEF9 classification:Definitive
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:ARV1 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:ARX classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:ATP6V1A classification:Definitive
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:ATP6V1B2 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:CACNA1A classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:CACNA1E classification:Definitive
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:CAD classification:Definitive
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:CDK19 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:CDKL5 classification:Definitive
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:CHD2 classification:Definitive
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:CNPY3 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:CPLX1 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:CUX2 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:CYFIP2 classification:Definitive
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:DALRD3 classification:Moderate
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:DENND5A classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:DMXL2 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:DNM1 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:DOCK7 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:EEF1A2 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:FGF12 classification:Definitive
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:FGF13 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:FRRS1L classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:GABBR2 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:GABRA1 classification:Definitive
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:GABRA2 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:GABRA5 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:GABRB1 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:GABRB2 classification:Definitive
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:GABRB3 classification:Definitive
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:GAD1 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:GLS classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:GNAO1 classification:Definitive
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:GOT2 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:GRIN2A classification:Limited
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:GRIN2B classification:Definitive
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:GRIN2D classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:GUF1 classification:Limited
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:HCN1 classification:Definitive
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:HNRNPU classification:Definitive
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:ITPA classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:KCNA2 classification:Definitive
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:KCNB1 classification:Definitive
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:KCNQ2 classification:Definitive
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:KCNT1 classification:Definitive
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:KCNT2 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:MDH1 classification:Moderate
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:MDH2 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:NECAP1 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:NEUROD2 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:NSF classification:Moderate
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:NTRK2 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:PACS2 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:PARS2 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:PCDH19 classification:Definitive
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:PHACTR1 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:PIGB classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:PIGP classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:PIGQ classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:PIGS classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:PLCB1 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:PPP3CA classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:RHOBTB2 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:RNF13 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:SCN1B classification:Definitive
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:SCN2A classification:Definitive
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:SCN3A classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:SCN8A classification:Definitive
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:SIK1 classification:Definitive
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:SLC12A5 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:SLC1A2 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:SLC25A12 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:SLC25A22 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:SPTAN1 classification:Definitive
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:ST3GAL3 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:STXBP1 classification:Definitive
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:SYNJ1 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:SZT2 classification:Definitive
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:TBC1D24 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:TRAK1 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:UBA5 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:UGDH classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:UGP2 classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:WWOX classification:Strong
+subtype：Developmental and epileptic encephalopathy subdisease_regulates DNA:YWHAG classification:Definitive
+subtype：Developmental and epileptic encephalopathy  subdisease_regulates DNA:SLC13A5 classification:Definitive
+subtype：Developmental and epileptic encephalopathy  subdisease_regulates DNA:SMC1A classification:Definitive
+subtype：Dravet syndrome subdisease_regulates DNA:SCN1A classification:Strong
+subtype：Epilepsy idiopathic generalized, susceptibility to, 8} subdisease_regulates DNA:CASR classification:Limited
+subtype：Epilepsy nocturnal frontal lobe subdisease_regulates DNA:KCNT1 classification:Strong
+subtype：Epilepsy, X-linked, with variable learning disabilities and behavior disorders subdisease_regulates DNA:SYN1 classification:Strong
+subtype：Epilepsy, childhood absence subdisease_regulates DNA:GABRA1 classification:Strong
+subtype：Epilepsy, childhood absence subdisease_regulates DNA:GABRB3 classification:Definitive
+subtype：Epilepsy, childhood absence subdisease_regulates DNA:CACNA1H classification:Limited
+subtype：Epilepsy, early-onset, vitamin B6-dependent subdisease_regulates DNA:PLPBP classification:Strong
+subtype：Epilepsy, early-onset, with or without developmental delay subdisease_regulates DNA:SETD1A classification:Limited
+subtype：Epilepsy, familial adult myoclonic subdisease_regulates DNA:ADRA2B classification:Limited
+subtype：Epilepsy, familial adult myoclonic subdisease_regulates DNA:RAPGEF2 classification:Limited
+subtype：Epilepsy, familial adult myoclonic subdisease_regulates DNA:SAMD12 classification:Strong
+subtype：Epilepsy, familial adult myoclonic subdisease_regulates DNA:STARD7 classification:Limited
+subtype：Epilepsy, familial adult myoclonic subdisease_regulates DNA:TNRC6A classification:Limited
+subtype：Epilepsy, familial focal, with variable foci subdisease_regulates DNA:DEPDC5 classification:Definitive
+subtype：Epilepsy, familial focal, with variable foci subdisease_regulates DNA:NPRL2 classification:Strong
+subtype：Epilepsy, familial focal, with variable foci subdisease_regulates DNA:NPRL3 classification:Strong
+subtype：Epilepsy, familial focal, with variable foci subdisease_regulates DNA:SCN3A classification:Strong
+subtype：Epilepsy, familial temporal lobe subdisease_regulates DNA:CPA6 classification:Limited
+subtype：Epilepsy, familial temporal lobe subdisease_regulates DNA:GAL classification:Limited
+subtype：Epilepsy, familial temporal lobe subdisease_regulates DNA:LGI1 classification:Strong
+subtype：Epilepsy, familial temporal lobe subdisease_regulates DNA:RELN classification:Strong
+subtype：Epilepsy, hearing loss, and mental retardation syndrome subdisease_regulates DNA:AFG2A classification:Definitive
+subtype：Epilepsy, hearing loss, and mental retardation syndrome subdisease_regulates DNA:SPATA5 classification:Strong
+subtype：Epilepsy, hot water subdisease_regulates DNA:SLC1A1 classification:Supportive
+subtype：Epilepsy, idiopathic generalized subdisease_regulates DNA:GABRD classification:Strong
+subtype：Epilepsy, idiopathic generalized subdisease_regulates DNA:CLCN2 classification:Strong
+subtype：Epilepsy, idiopathic generalized subdisease_regulates DNA:SLC2A1 classification:Strong
+subtype：Epilepsy, idiopathic generalized subdisease_regulates DNA:SLC12A5 classification:Limited
+subtype：Epilepsy, idiopathic generalized subdisease_regulates DNA:RORB classification:Strong
+subtype：Epilepsy, idiopathic generalized subdisease_regulates DNA:CACNB4 classification:Limited
+subtype：Epilepsy, juvenile absence, susceptibility to, 2} subdisease_regulates DNA:CLCN2 classification:Strong
+subtype：Epilepsy, juvenile myoclonic, susceptibility to subdisease_regulates DNA:GABRA1 classification:Strong
+subtype：Epilepsy, juvenile myoclonic, susceptibility to subdisease_regulates DNA:CLCN2 classification:Strong
+subtype：Epilepsy, juvenile myoclonic, susceptibility to subdisease_regulates DNA:GABRD classification:Strong
+subtype：Epilepsy, myoclonic, familial adult subdisease_regulates DNA:CNTN2 classification:Strong
+subtype：Epilepsy, myoclonic, familial adult subdisease_regulates DNA:YEATS2 classification:Limited
+subtype：Epilepsy, nocturnal frontal lobe subdisease_regulates DNA:CHRNA4 classification:Definitive
+subtype：Epilepsy, nocturnal frontal lobe subdisease_regulates DNA:CHRNB2 classification:Strong
+subtype：Epilepsy, nocturnal frontal lobe subdisease_regulates DNA:CHRNA2 classification:Strong
+subtype：Epilepsy, progressive myoclonic subdisease_regulates DNA:C9ORF72 classification:Limited
+subtype：Epilepsy, progressive myoclonic subdisease_regulates DNA:CERS1 classification:Strong
+subtype：Epilepsy, progressive myoclonic subdisease_regulates DNA:GOSR2 classification:Strong
+subtype：Epilepsy, progressive myoclonic subdisease_regulates DNA:KCNC1 classification:Definitive
+subtype：Epilepsy, progressive myoclonic subdisease_regulates DNA:LMNB2 classification:Strong
+subtype：Epilepsy, progressive myoclonic subdisease_regulates DNA:NUS1 classification:Strong
+subtype：Epilepsy, progressive myoclonic subdisease_regulates DNA:PRDM8 classification:Strong
+subtype：Epilepsy, progressive myoclonic subdisease_regulates DNA:SCARB2 classification:Strong
+subtype：Epilepsy, progressive myoclonic subdisease_regulates DNA:SEMA6B classification:Strong
+subtype：Epilepsy, progressive myoclonic subdisease_regulates DNA:SLC7A6OS classification:Limited
+subtype：Epilepsy, progressive myoclonic  subdisease_regulates DNA:CSTB classification:Definitive
+subtype：Epilepsy, progressive myoclonic  subdisease_regulates DNA:PRICKLE1 classification:Supportive
+subtype：Epilepsy, progressive myoclonic  subdisease_regulates DNA:SCARB2 classification:Supportive
+subtype：Epilepsy, progressive myoclonic  subdisease_regulates DNA:PRICKLE1 classification:Strong
+subtype：Epilepsy, progressive myoclonic  subdisease_regulates DNA:EPM2A classification:Strong
+subtype：Epilepsy, progressive myoclonic  subdisease_regulates DNA:NHLRC1 classification:Definitive
+subtype：Epilepsy, progressive myoclonic  subdisease_regulates DNA:EPM2A classification:Strong
+subtype：Epilepsy, progressive myoclonic  subdisease_regulates DNA:NHLRC1 classification:Definitive
+subtype：Epilepsy, progressive myoclonic  subdisease_regulates DNA:KCTD7 classification:Definitive
+subtype：Epilepsy, progressive myoclonic  subdisease_regulates DNA:SCARB2 classification:Definitive
+subtype：Facial dysmorphism, hypertrichosis, epilepsy, intellectual/developmental delay, and gingival overgrowth syndrome subdisease_regulates DNA:KCNK4 classification:Strong
+subtype：Generalized epilepsy with febrile seizures plus, type subdisease_regulates DNA:HCN1 classification:Strong
+subtype：Generalized epilepsy with febrile seizures plus, type subdisease_regulates DNA:SCN9A classification:Strong
+subtype：Generalized epilepsy with febrile seizures plus, type subdisease_regulates DNA:STX1B classification:Strong
+subtype：Hypotonia, hypoventilation, impaired intellectual development, dysautonomia, epilepsy, and eye abnormalities subdisease_regulates DNA:P4HTM classification:Definitive
+subtype：Intellectual developmental disorder with or without epilepsy or cerebellar ataxia subdisease_regulates DNA:RORA classification:Strong
+subtype：Mental retardation, stereotypic movements, epilepsy, and/or cerebral malformations subdisease_regulates DNA:MEF2C classification:Definitive
+subtype：Microcephaly, epilepsy, and diabetes syndrome subdisease_regulates DNA:YIPF5 classification:Strong
+subtype：Myoclonic epilepsy, infantile, familial subdisease_regulates DNA:CPLX1 classification:Supportive
+subtype：Myoclonic epilepsy, infantile, familial subdisease_regulates DNA:TBC1D24 classification:Definitive
+subtype：Myoclonic epilepsy, juvenile subdisease_regulates DNA:CACNB4 classification:Supportive
+subtype：Myoclonic epilepsy, juvenile subdisease_regulates DNA:CILK1 classification:Supportive
+subtype：Myoclonic epilepsy, juvenile subdisease_regulates DNA:EFHC1 classification:Limited
+subtype：Myoclonic epilepsy, juvenile subdisease_regulates DNA:GABRA1 classification:Supportive
+subtype：Myoclonic-atonic epilepsy subdisease_regulates DNA:SLC6A1 classification:Definitive
+subtype：Myopathy, epilepsy, and progressive cerebral atrophy subdisease_regulates DNA:ALG14 classification:Strong
+subtype：Neurodevelopmental disorder with epilepsy and hypoplasia of the corpus callosum subdisease_regulates DNA:LNPK classification:Strong
+subtype：Neurodevelopmental disorder with epilepsy, cataracts, feeding difficulties, and delayed brain myelination subdisease_regulates DNA:NACC1 classification:Strong
+subtype：Neurodevelopmental disorder with epilepsy, spasticity, and brain atrophy subdisease_regulates DNA:TRAPPC4 classification:Definitive
+subtype：Neurodevelopmental disorder with infantile epileptic spasms subdisease_regulates DNA:NCDN classification:Strong
+subtype：Neurodevelopmental disorder with microcephaly, epilepsy, and brain atrophy subdisease_regulates DNA:TRAPPC6B classification:Strong
+subtype：Neurodevelopmental disorder with microcephaly, epilepsy, and hypomyelination subdisease_regulates DNA:MTHFS classification:Strong
+subtype：Neurodevelopmental disorder with microcephaly, impaired language, epilepsy, and gait abnormalities, autosomal dominant subdisease_regulates DNA:NARS classification:Strong
+subtype：Neurodevelopmental disorder with microcephaly, impaired language, epilepsy, and gait abnormalities, autosomal dominant subdisease_regulates DNA:NARS1 classification:Strong
+subtype：Neurodevelopmental disorder with or without early-onset generalized epilepsy subdisease_regulates DNA:EP400 classification:Strong
+subtype：Neurodevelopmental disorder with or without early-onset generalized epilepsy subdisease_regulates DNA:NBEA classification:Strong
+subtype：Neurodevelopmental disorder with seizures and nonepileptic hyperkinetic movements subdisease_regulates DNA:CACNA1B classification:Strong
+subtype：Paroxysmal nonkinesigenic dyskinesia, 3, with or without generalized epilepsy subdisease_regulates DNA:KCNMA1 classification:Definitive
+subtype：Polyhydramnios, megalencephaly, and symptomatic epilepsy subdisease_regulates DNA:STRADA classification:Definitive
+subtype：Psychomotor retardation, epilepsy, and craniofacial dysmorphism subdisease_regulates DNA:SNIP1 classification:Moderate
+subtype：Rolandic epilepsy, impaired intellectual development, and speech dyspraxia subdisease_regulates DNA:SRPX2 classification:Limited
+subtype：Spinal muscular atrophy with progressive myoclonic epilepsy subdisease_regulates DNA:ASAH1 classification:Definitive

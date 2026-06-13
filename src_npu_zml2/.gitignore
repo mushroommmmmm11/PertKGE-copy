@@ -1,0 +1,11 @@
+__pycache__/
+kernel_meta/
+*.pyc
+*.pyo
+.DS_Store
+*.pt
+best_model/
+outlog/
+pertkge_full/
+full_test4/
+*.log

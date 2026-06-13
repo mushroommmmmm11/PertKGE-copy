@@ -1,0 +1,29 @@
+﻿# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# NPU compiled kernels
+kernel_meta/
+
+# Models & checkpoints
+*.pt
+*.pth
+best_model/
+
+# Large data files
+effect.txt
+process.txt
+cause.txt
+test.txt
+
+# Logs & outputs
+*.log
+outlog/
+pertkge_full/
+output/
+tensorboard/
+
+# IDE
+.vscode/
+.idea/
